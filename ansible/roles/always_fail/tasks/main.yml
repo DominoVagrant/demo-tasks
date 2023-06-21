@@ -1,0 +1,22 @@
+---
+-
+  name: "Setting timezone to {{ timezone }}"
+  community.general.timezone:
+    name: "{{ timezone }}"
+
+-
+  name: "Creating Directories"
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0777
+  with_items:
+    - "{{ completed_dir }}"
+    - "/root/.ansible/tmp"
+    - "/vagrant/support-bundle"
+
+- name: "Forcing a Failure"
+  ansible.builtin.fail:
+    msg: "This role is to test a success and Failure using Ansible in SHI/Vagrant"
+  when: true
+
