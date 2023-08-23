@@ -1,6 +1,6 @@
 {
     "packages": {
-        "demo-tasks": {
+        ".": {
             "changelog-path": "CHANGELOG.md",
             "release-type": "ruby",
             "bump-minor-pre-major": true,
