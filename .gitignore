@@ -27,11 +27,11 @@ SAFE.IDS
 .gradle/
 build/
 test_files/
-Hosts.template.yml
+*/Hosts.template.yml
 
-installers/*/archives/*.tar.xz
-installers/*/archives/*.tar.gz
-installers/*/archives/*.tar
-installers/*/archives/*.zip
-installers/*/archives/*.gz
-installers/*/archives/*.tgz
+*/installers/*/archives/*.tar.xz
+*/installers/*/archives/*.tar.gz
+*/installers/*/archives/*.tar
+*/installers/*/archives/*.zip
+*/installers/*/archives/*.gz
+*/installers/*/archives/*.tgz

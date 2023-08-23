@@ -9,19 +9,6 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - 
-        name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - 
-        name: Remove files from Release
-        id: releases_clean
-        run: |
-          rm -rf release-please-config.json README.md LICENSE Hosts.yml CHANGELOG.md .release-please-manifest.json .gitignore .gitattributes
-        shell: bash
-
       -
         name: Release-Please
         id: release
@@ -33,4 +20,5 @@ jobs:
           package-name: demo-tasks
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
-          version-file: "core/version.rb"
+          version-file: "demo-tasks/core/version.rb"
+          path: demo-tasks
