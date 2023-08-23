@@ -27,6 +27,7 @@ SAFE.IDS
 .gradle/
 build/
 test_files/
+Hosts.template.yml
 
 installers/*/archives/*.tar.xz
 installers/*/archives/*.tar.gz
