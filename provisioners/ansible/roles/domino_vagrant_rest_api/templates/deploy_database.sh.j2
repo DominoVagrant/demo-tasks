@@ -76,6 +76,7 @@ cat > /tmp/$JSON_NAME << EndOfMessage
 								"isPublicReader": true,
 								"isPublicWriter": true,
 								"canDeleteDocuments": true
+								"canReplicateOrCopyDocuments": true
 							},
 							{
 								"name": "LocalDomainAdmins",
@@ -100,12 +101,13 @@ cat > /tmp/$JSON_NAME << EndOfMessage
 								"isPublicWriter": true
 							},
 							{
-								"name": "CN=Demo Admin/O=DEMO",
+								"name": "CN={{ domino_admin_user_first_name }} {{ domino_admin_user_last_name }}/O={{ domino_organization }}",
 								"level": "manager",
 								"type": "person",
 								"isPublicReader": true,
 								"isPublicWriter": true,
-								"canDeleteDocuments": true
+								"canDeleteDocuments": true,
+								"canReplicateOrCopyDocuments": true
 							}
 						]
 					}
