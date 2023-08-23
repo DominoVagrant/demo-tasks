@@ -1,13 +1,13 @@
 {
     "packages": {
-        ".": {
+        "demo-tasks": {
             "changelog-path": "CHANGELOG.md",
             "release-type": "ruby",
             "bump-minor-pre-major": true,
             "bump-patch-for-minor-pre-major": true,
             "package-name": "demo-tasks",
             "draft": false,
-            "version-file": "demo-tasks/core/version.rb",
+            "version-file": "core/version.rb",
             "prerelease": false,
             "default-branch" : "main",
             "component": "demo-tasks"
