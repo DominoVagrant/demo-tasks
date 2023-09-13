@@ -11,5 +11,4 @@ packages:
   - psutils
   - python3-psutil
   - libxml2-utils
-pip_packages:
 
