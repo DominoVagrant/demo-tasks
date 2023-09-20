@@ -73,10 +73,10 @@ jobs:
         with:
           repository: STARTcloud/startcloud_roles
           path: ${{ env.app_name }}/provisioners/ansible/roles
-          sparse-checkout: |
-            Vagrantfile
-            core/
-          sparse-checkout-cone-mode: false
+          #sparse-checkout: |
+          #  Vagrantfile
+          #  core/
+          #sparse-checkout-cone-mode: false
 
 #      - 
 #        name: "Including Startcloud Roles"
