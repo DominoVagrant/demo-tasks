@@ -1,5 +1,37 @@
 # Changelog
 
+## 1.0.0 (2023-09-20)
+
+
+### Bug Fixes
+
+* actions ([95a0134](https://github.com/DominoVagrant/demo-tasks/commit/95a0134604271d4d71fa0d8f955941517cb3d583))
+* Additional Issue fixes ([14487e1](https://github.com/DominoVagrant/demo-tasks/commit/14487e19d1916a2dbdcb7d7baac28b7db781c30b))
+* auto-buildandrelease ([606ff69](https://github.com/DominoVagrant/demo-tasks/commit/606ff6976c511cec0b12fc5440ea2f0a9c12cca9))
+* auto-buildandrelease ([387ae13](https://github.com/DominoVagrant/demo-tasks/commit/387ae1399921726eacf7ac23def1f78f4c57d309))
+* auto-buildandrelease ([4a82874](https://github.com/DominoVagrant/demo-tasks/commit/4a82874c7056b0cc39a92d25379695fdd25c1b72))
+* auto-buildandrelease ([e9ea2e2](https://github.com/DominoVagrant/demo-tasks/commit/e9ea2e20670ae0610d761fce648754bb1eaeb7d0))
+* change component ([5c26dce](https://github.com/DominoVagrant/demo-tasks/commit/5c26dce9ec7d5ed51fbef06a8c8e586805ad1401))
+* Change versioning to Manifest ([f8389a1](https://github.com/DominoVagrant/demo-tasks/commit/f8389a16fe3d91750085a2f791f050f58ef406e5))
+* Debian 14 support ([f5f5c27](https://github.com/DominoVagrant/demo-tasks/commit/f5f5c27e4cac63b5433a34793259d290f96f4466))
+* Debian 14 support ([31f32d8](https://github.com/DominoVagrant/demo-tasks/commit/31f32d8baca93ac835f25709c8dc9e35c3f62dba))
+* domino versioning ([1c78b41](https://github.com/DominoVagrant/demo-tasks/commit/1c78b41110d05b1161df45be3b02ba06050069f7))
+* exclude paths fromtriggering ([6d05c53](https://github.com/DominoVagrant/demo-tasks/commit/6d05c53a91ea3f1b7d9f5f41b65388d39f8259dc))
+* github action ([91f90cb](https://github.com/DominoVagrant/demo-tasks/commit/91f90cba7cec077f73417b2e2a6a6d261e07969b))
+* githubactions ([fc470f5](https://github.com/DominoVagrant/demo-tasks/commit/fc470f5cea8d0e968f4c667abe47b84720050e2c))
+* githubactions ([0cc0622](https://github.com/DominoVagrant/demo-tasks/commit/0cc0622c8ba4412a5b851b0e569f224c38bd25a7))
+* githubactions ([aa00d5f](https://github.com/DominoVagrant/demo-tasks/commit/aa00d5f4c33c008da14cd97f754315462ec1abfd))
+* line endings ([258e818](https://github.com/DominoVagrant/demo-tasks/commit/258e8180e7534f1f6245a5eca41746357df744af))
+* Lint All Roles, include more debugging ([b4d6051](https://github.com/DominoVagrant/demo-tasks/commit/b4d6051ee2b5ad246d82e5884dc18b5bbf4ff11e))
+* port-fwrding and roles, prepare new feats ([034f584](https://github.com/DominoVagrant/demo-tasks/commit/034f584a90d2cded4452111aa4e01022b60e35e4))
+* remove Browser opening ([20d2e9c](https://github.com/DominoVagrant/demo-tasks/commit/20d2e9c8daf79d385b15ac2a6d29f5852fb71af2))
+* remove major, minor, fix for domino installer ([bb839cc](https://github.com/DominoVagrant/demo-tasks/commit/bb839cc153d5e123bdc55ea16d63278430689a74))
+* restructure to only release subdirectory without github and automation fluff ([0bb1f0a](https://github.com/DominoVagrant/demo-tasks/commit/0bb1f0a1f2f5c4d09d1f252a92d602a52c75603b))
+* ssl self signed enabled ([ee0fb5d](https://github.com/DominoVagrant/demo-tasks/commit/ee0fb5d856236cd7f92578e5d66c7211ddb0cabf))
+* update release please ([d817f76](https://github.com/DominoVagrant/demo-tasks/commit/d817f76ec433143673915407cedd973fb5815a40))
+* update role remove portforwarding ([21a503a](https://github.com/DominoVagrant/demo-tasks/commit/21a503acefc22dc50ceba05db59199688e6ecf5c))
+* Website Terminal Fix ([f78cb08](https://github.com/DominoVagrant/demo-tasks/commit/f78cb0869fe79fe66a273cf7b8c631c09f1c77b3))
+
 ## [0.1.20](https://github.com/DominoVagrant/demo-tasks/compare/demo-tasks/v0.1.19...demo-tasks/v0.1.20) (2023-07-05)
 
 
