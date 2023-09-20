@@ -28,7 +28,7 @@ on:
 
 env:
   app_name: ${{ inputs.env == 'production' && 'demo-tasks' || 'demo-tasks-development' }}
-  suffix: ${{ inputs.env == 'production' && '' || '-dev' }}
+  suffix: ${{ inputs.env == 'development' && '-dev' || '' }}
 
 jobs:
   release-please:
@@ -70,7 +70,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           name: "${{ env.app_name }}: v${{ inputs.version }}"
-          tag_name: v${{ inputs.version }}${{ env.suffix }}
+          tag_name: ${{ env.app_name }}/v${{ inputs.version }}${{ env.suffix }}
           target_commitish: ${{ github.sha }}
           body: |
             This is a ${{ inputs.env }} release of ${{ env.app_name }}.
