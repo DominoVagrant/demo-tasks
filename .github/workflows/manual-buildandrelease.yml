@@ -61,7 +61,7 @@ jobs:
           repository: "STARTcloud/core_provisioner"
           latest: true
           fileName: "core_provisioner.zip"
-          #out-file-path: "demo-tasks"
+          out-file-path: "${{ env.app_name }}/core1"
           extract: true
 
       -
