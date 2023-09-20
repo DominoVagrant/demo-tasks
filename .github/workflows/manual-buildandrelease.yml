@@ -68,16 +68,24 @@ jobs:
           path: "${{ env.app_name }}/provisioners/ansible/roles"
 
       - 
-        name: "Checking out Core Provisioner"
+        name: "Checking out STARTcloud/startcloud_roles"
         uses: actions/checkout@v4
         with:
           repository: STARTcloud/startcloud_roles
           path: ${{ env.app_name }}/provisioners/ansible/roles
-          #sparse-checkout: |
-          #  Vagrantfile
-          #  core/
-          #sparse-checkout-cone-mode: false
 
+      - 
+        name: "Checking out STARTcloud/hcl_roles"
+        uses: actions/checkout@v4
+        with:
+          repository: STARTcloud/hcl_roles
+          path: ${{ env.app_name }}/provisioners/ansible/roles
+
+      -
+        name: "Removing Roles Directory"
+        uses: JesseTG/rm@v1.0.3
+        with:
+          path: "${{ env.app_name }}/provisioners/ansible/roles/.git"
 #      - 
 #        name: "Including Startcloud Roles"
 #        uses: robinraju/release-downloader@v1.8
