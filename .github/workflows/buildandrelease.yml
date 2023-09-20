@@ -45,11 +45,10 @@ jobs:
           echo "Version: ${{ inputs.version }}"
           echo "App Name: ${{ env.app_name }}"
 
-      -
-        name: Zipping Demo-Tasks
-        uses: montudor/action-zip@v1
+      - uses: vimtor/action-zip@v1
         with:
-          args: zip -qq -r ${{ env.app_name }}.zip ${{ env.app_name }}
+          files: ${{ env.app_name }}
+          dest: ${{ env.app_name }}.zip 
 
       - 
         name: Create release
