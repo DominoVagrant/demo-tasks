@@ -19,6 +19,11 @@ on:
         required: true
         type: boolean
         default: false
+      draft: 
+        description: 'Release as draft'
+        required: true
+        type: boolean
+        default: true
 
 env:
   app_name: ${{ inputs.env == 'production' && 'demo-tasks' || 'demo-tasks-development' }}
@@ -28,6 +33,13 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
+      - name: Build info
+        run: |
+          echo "Ref: ${{ github.ref_name }}"
+          echo "Env: ${{ inputs.env }}"
+          echo "Version: ${{ inputs.version }}"
+          echo "App Name: ${{ env.app_name }}"
+
 #      -
 #        name: Release-Please
 #        id: release
@@ -39,17 +51,15 @@ jobs:
 #          bump-minor-pre-major: true
 #          bump-patch-for-minor-pre-major: true
 #          version-file: "demo-tasks/core/version.rb"
-#          path: demo-tasks
 
-      - uses: actions/checkout@v2
-      - name: Build info
-        run: |
-          echo "Ref: ${{ github.ref_name }}"
-          echo "Env: ${{ inputs.env }}"
-          echo "Version: ${{ inputs.version }}"
-          echo "App Name: ${{ env.app_name }}"
+      - 
+        name: Checking out code
+        uses: actions/checkout@v2
+#        if: ${{ steps.release.outputs.release_created }}
 
-      - uses: vimtor/action-zip@v1
+      -
+        name: Zipping Output
+        uses: vimtor/action-zip@v1
         with:
           files: ${{ env.app_name }}/
           dest: ${{ env.app_name }}.zip 
@@ -63,7 +73,7 @@ jobs:
           target_commitish: ${{ github.sha }}
           body: |
             This is a ${{ inputs.env }} release of ${{ env.app_name }}.
-          draft: true
+          draft: ${{ inputs.draft }}
           prerelease: ${{ inputs.env == 'development' }}
           files: |
             ${{ env.app_name }}.zip
