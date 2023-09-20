@@ -45,17 +45,6 @@ jobs:
         name: Checking out code
         uses: actions/checkout@v2
 
-#      - 
-#        name: "Checking out Core Provisioner"
-#        uses: actions/checkout@v4
-#        with:
-#          repository: STARTcloud/core_provisioner
-#          path: ${{ env.app_name }}/core1
-#          sparse-checkout: |
-#            Vagrantfile
-#            core/
-#          sparse-checkout-cone-mode: false
-
       - 
         name: "Including Core Release"
         uses: robinraju/release-downloader@v1.8
@@ -65,6 +54,45 @@ jobs:
           fileName: "core_provisioner.zip"
           out-file-path: "${{ env.app_name }}/"
           extract: true
+
+      -
+        name: "Removing core_provisioner Archive"
+        uses: JesseTG/rm@v1.0.3
+        with:
+          path: "${{ env.app_name }}/core_provisioner.zip"
+
+      -
+        name: "Removing Roles Directory"
+        uses: JesseTG/rm@v1.0.3
+        with:
+          path: "${{ env.app_name }}/provisioners/ansible/roles"
+
+      - 
+        name: "Checking out Core Provisioner"
+        uses: actions/checkout@v4
+        with:
+          repository: STARTcloud/startcloud_roles
+          path: ${{ env.app_name }}/provisioners/ansible/roles
+          sparse-checkout: |
+            Vagrantfile
+            core/
+          sparse-checkout-cone-mode: false
+
+#      - 
+#        name: "Including Startcloud Roles"
+#        uses: robinraju/release-downloader@v1.8
+#        with:
+#          repository: "STARTcloud/startcloud_roles"
+#          latest: true
+#          fileName: "startcloud_roles.zip"
+#          out-file-path: "${{ env.app_name }}/provisioners/ansible/roles"
+#          extract: true
+#
+#      -
+#        name: "Removing startcloud_roles Archive"
+#        uses: JesseTG/rm@v1.0.3
+#        with:
+#          path: "${{ env.app_name }}/core_provisioner.zip"
 
       -
         name: Zipping Output
