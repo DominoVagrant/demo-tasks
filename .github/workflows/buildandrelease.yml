@@ -9,16 +9,44 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
+#      -
+#        name: Release-Please
+#        id: release
+#        uses: google-github-actions/release-please-action@v3
+#        with:
+#          command: manifest
+#          default-branch: main
+#          package-name: demo-tasks
+#          bump-minor-pre-major: true
+#          bump-patch-for-minor-pre-major: true
+#          version-file: "demo-tasks/core/version.rb"
+#          path: demo-tasks
+
+
+      - name: Build info
+        run: |
+          echo "Ref: ${{ github.ref_name }}"
+          echo "Env: ${{ inputs.env }}"
+          echo "Version: ${{ inputs.version }}"
+          echo "App Name: ${{ env.app_name }}"
+
       -
-        name: Release-Please
-        id: release
-        uses: google-github-actions/release-please-action@v3
-        if: steps.vagrant-destroy.outputs.exit_code == 0
+        name: Zipping Demo-Tasks
+        uses: montudor/action-zip@v1
         with:
-          command: manifest
-          default-branch: main
-          package-name: demo-tasks
-          bump-minor-pre-major: true
-          bump-patch-for-minor-pre-major: true
-          version-file: "demo-tasks/core/version.rb"
-          path: demo-tasks
+          args: zip -qq -r ${{ env.app_name }}.zip ${{ env.app_name }}
+
+      - 
+        name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: demo-tasks v${{ inputs.version }} ${{ inputs.env }}
+          tag_name: v${{ inputs.version }}${{ env.suffix }}
+          target_commitish: ${{ github.sha }}
+          body: |
+            This is a ${{ inputs.env }} release of demo-tasks.
+          draft: true
+          prerelease: ${{ inputs.env == 'development' }}
+          files: |
+            ${{ env.app_name }}.zip
+          fail_on_unmatched_files: true

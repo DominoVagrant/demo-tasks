@@ -174,6 +174,7 @@ class Hosts
             host['settings']['memory']= host['settings']['memory'].tr('^0-9', '')
           end
           vb.name = "#{host['settings']['server_id']}--#{host['settings']['hostname']}.#{host['settings']['domain']}"
+          vb.gui = host['settings']['show_console']
           vb.customize ['modifyvm', :id, '--ostype', host['settings']['os_type']]
           vb.customize ["modifyvm", :id, "--vrdeport", host['settings']['consoleport']]
           vb.customize ["modifyvm", :id, "--vrdeaddress", host['settings']['consolehost']]
