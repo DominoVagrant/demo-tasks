@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.1.23](https://github.com/DominoVagrant/demo-tasks/compare/demo-tasks/v0.1.22...demo-tasks/v0.1.23) (2023-09-20)
+
+
+### Bug Fixes
+
+* auto-buildandrelease ([7de4114](https://github.com/DominoVagrant/demo-tasks/commit/7de41148ba3ff050988cffbddb813dbb765ac689))
+* auto-buildandrelease ([3180731](https://github.com/DominoVagrant/demo-tasks/commit/3180731b74b16d211ab42d841ba11da8dee1eb71))
+* auto-buildandrelease ([302d856](https://github.com/DominoVagrant/demo-tasks/commit/302d85694c2a284be5493fb5fe43efdea9518fc4))
+* auto-buildandrelease ([9da7d1a](https://github.com/DominoVagrant/demo-tasks/commit/9da7d1a3f2dc29ae1a34375b2edbbd77f9de28f4))
+* auto-buildandrelease ([63a2ed6](https://github.com/DominoVagrant/demo-tasks/commit/63a2ed6e10e10423bc3e02b677ba3e54af655c76))
+* auto-buildandrelease ([576d8d4](https://github.com/DominoVagrant/demo-tasks/commit/576d8d48b3ce227c0fe386395848edb01f114e1a))
+* auto-buildandrelease ([6ce3798](https://github.com/DominoVagrant/demo-tasks/commit/6ce37989e5f8f677453aa40164349fd29a196f30))
+* auto-buildandrelease ([3b7e2f0](https://github.com/DominoVagrant/demo-tasks/commit/3b7e2f0ff06f8422db77190939e9c3fbfa32cc83))
+* include core provisioner ([e2115f0](https://github.com/DominoVagrant/demo-tasks/commit/e2115f0709b1afe4984a996782dd1cf15bb45b91))
+* include core provisioner ([69c04b6](https://github.com/DominoVagrant/demo-tasks/commit/69c04b6dc244ba6f515a75faeb63ff6e6bb4a3b7))
+* include core provisioner ([cff5e64](https://github.com/DominoVagrant/demo-tasks/commit/cff5e648b531d42ef055096a3bf21156b1808873))
+* include core provisioner ([46181cc](https://github.com/DominoVagrant/demo-tasks/commit/46181cc7380ca0b03d480e899ffb7d7138e6dad1))
+* include core provisioner ([b7197b2](https://github.com/DominoVagrant/demo-tasks/commit/b7197b2df5e507eea633053c76d50eb8a50ba519))
+* include core provisioner ([2d5e244](https://github.com/DominoVagrant/demo-tasks/commit/2d5e244d6f6fdf0ad2d0b80200b03658cdf3782e))
+* include core provisioner ([82304e8](https://github.com/DominoVagrant/demo-tasks/commit/82304e8359a8e1ccc4237a6cfe4a59e431713842))
+* include core provisioner ([05448a4](https://github.com/DominoVagrant/demo-tasks/commit/05448a4823df0e795275e82c32f25cf629d91ebf))
+* include core provisioner ([d4b0f28](https://github.com/DominoVagrant/demo-tasks/commit/d4b0f28c18b5fc25bb273d930842f46090f69568))
+* include core provisioner ([d777a74](https://github.com/DominoVagrant/demo-tasks/commit/d777a74eaf5cb89a89b907e04ef4633244ddd0cb))
+* include core provisioner ([c1b7c00](https://github.com/DominoVagrant/demo-tasks/commit/c1b7c008a2e0b9a88cc6fd8fa4a6d904d2a79545))
+* update ([898b98d](https://github.com/DominoVagrant/demo-tasks/commit/898b98d24afcf7e1f44c6efb60c9d0f549f578ba))
+
 ## [0.1.22](https://github.com/DominoVagrant/demo-tasks/compare/demo-tasks/v0.1.21...demo-tasks/v0.1.22) (2023-09-20)
 
 
