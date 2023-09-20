@@ -63,14 +63,14 @@ jobs:
           repository: "STARTcloud/core_provisioner"
           latest: true
           fileName: "core_provisioner.zip"
-          out-file-path: "${{ env.app_name }}/core"
+          out-file-path: "${{ env.app_name }}/"
           extract: true
 
       -
         name: "Removing core_provisioner Archive"
         uses: JesseTG/rm@v1.0.3
         with:
-          path: "${{ env.app_name }}/core/core_provisioner.zip"
+          path: "${{ env.app_name }}/core_provisioner.zip"
         
       -
         name: Zipping Output
