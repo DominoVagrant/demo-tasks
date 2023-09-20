@@ -45,6 +45,16 @@ jobs:
         name: Checking out code
         uses: actions/checkout@v2
 
+      - 
+        name: "Checking out Core Provisioner"
+        uses: actions/checkout@v4
+        with:
+          repository: STARTcloud/core_provisioner
+          path: ${{ env.app_name }}/core1
+          sparse-checkout: |
+            Vagrantfile
+            core/
+          sparse-checkout-cone-mode: false
       -
         name: Zipping Output
         uses: vimtor/action-zip@v1
