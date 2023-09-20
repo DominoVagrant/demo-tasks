@@ -7,7 +7,7 @@
             "bump-patch-for-minor-pre-major": true,
             "package-name": "demo-tasks",
             "draft": false,
-            "version-file": "core/version.rb",
+            "version-file": "demo-tasks/core/version.rb",
             "prerelease": false,
             "default-branch" : "main",
             "component": "demo-tasks"
