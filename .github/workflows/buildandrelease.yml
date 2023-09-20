@@ -20,6 +20,10 @@ on:
         type: boolean
         default: false
 
+env:
+  app_name: ${{ inputs.env == 'production' && 'demo-tasks' || 'demo-tasks-development' }}
+  suffix: ${{ inputs.env == 'production' && '' || '-dev' }}
+
 jobs:
   release-please:
     runs-on: ubuntu-latest
@@ -47,14 +51,14 @@ jobs:
 
       - uses: vimtor/action-zip@v1
         with:
-          files: ${{ env.app_name }}
-          dest: ${{ env.app_name }}.zip 
+          files: demo-tasks
+          dest: demo-tasks.zip 
 
       - 
         name: Create release
         uses: softprops/action-gh-release@v1
         with:
-          name: demo-tasks v${{ inputs.version }} ${{ inputs.env }}
+          name: "demo-tasks: v${{ inputs.version }}"
           tag_name: v${{ inputs.version }}${{ env.suffix }}
           target_commitish: ${{ github.sha }}
           body: |
