@@ -93,7 +93,7 @@ jobs:
           rm -rf ${{ env.app_name }}/provisioners/ansible/startcloud_roles
 
       -
-        name: "Removing Roles Directory"
+        name: "Removing .git directories"
         uses: JesseTG/rm@v1.0.3
         with:
           path: "${{ env.app_name }}/provisioners/ansible/roles/.git"
