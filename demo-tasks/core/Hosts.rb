@@ -224,26 +224,26 @@ class Hosts
 						disabled: folder['disabled']||= false
 					end
 				end
-
-        # Add Branch Files to Vagrant Share on VM Change to Git folders to pull
-        scriptsPath = File.dirname(__FILE__) + '/scripts'
-        if host['provisioning'].has_key?('role') && host['provisioning']['role']['enabled']
+        if host.has_key?('provisioning') and !host['provisioning'].nil?
+          # Add Branch Files to Vagrant Share on VM Change to Git folders to pull
+          if host['provisioning'].has_key?('role') && host['provisioning']['role']['enabled']
+            scriptsPath = File.dirname(__FILE__) + '/scripts'
             server.vm.provision 'shell' do |s|
               s.path = scriptsPath + '/add-role.sh'
               s.args = [host['provisioning']['role']['name'], host['provisioning']['role']['git_url'] ]
             end
-        end
+          end
 
-        # Run the shell provisioners defined in hosts.yml
-        if host['provisioning'].has_key?('shell') && host['provisioning']['shell']['enabled']
+          # Run the shell provisioners defined in hosts.yml
+          if host['provisioning'].has_key?('shell') && host['provisioning']['shell']['enabled']
           host['provisioning']['shell']['scripts'].each do |file|
               server.vm.provision 'shell', path: file
           end
-        end
+          end
 
-        # Run the Ansible Provisioners -- You can pass Host.yaml variables to Ansible via the Extra_vars variable as noted below.
-        ## If Ansible is not available on the host and is installed in the template you are spinning up, use 'ansible-local'
-        if host['provisioning'].has_key?('ansible') && host['provisioning']['ansible']['enabled']
+          # Run the Ansible Provisioners -- You can pass Host.yaml variables to Ansible via the Extra_vars variable as noted below.
+          ## If Ansible is not available on the host and is installed in the template you are spinning up, use 'ansible-local'
+          if host['provisioning'].has_key?('ansible') && host['provisioning']['ansible']['enabled']
           host['provisioning']['ansible']['scripts'].each do |scripts|
             if scripts.has_key?('local')
               scripts['local'].each do |localscript|
@@ -289,18 +289,19 @@ class Hosts
               end
             end
           end
-        end
+          end
 
-        # Run the Docker-Compose provisioners defined in hosts.yml
-        if host['provisioning'].has_key?('docker') && host['provisioning']['docker']['enabled']
+          # Run the Docker-Compose provisioners defined in hosts.yml
+          if host['provisioning'].has_key?('docker') && host['provisioning']['docker']['enabled']
           host['provisioning']['docker']['docker_compose'].each do |file|
               server.vm.provision 'docker'
               server.vm.provision :docker_compose, yml: file, run: "always"
           end
+          end
         end
       end
 
-      ## Open the browser after provisioning
+      ## Save variables to .vagrant directory
       if host.has_key?('networks') && host['settings']['provider-type'] == 'virtualbox'
         host['networks'].each_with_index do |network, netindex|
           config.trigger.after [:up] do |trigger|
