@@ -43,7 +43,7 @@ jobs:
 
       - 
         name: Checking out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - 
         name: "Including Core Release"
@@ -73,6 +73,7 @@ jobs:
         with:
           repository: STARTcloud/startcloud_roles
           path: ${{ env.app_name }}/provisioners/ansible/roles
+          clean: false
 
       - 
         name: "Checking out STARTcloud/hcl_roles"
@@ -80,6 +81,7 @@ jobs:
         with:
           repository: STARTcloud/hcl_roles
           path: ${{ env.app_name }}/provisioners/ansible/roles
+          clean: false
 
       -
         name: "Removing Roles Directory"
