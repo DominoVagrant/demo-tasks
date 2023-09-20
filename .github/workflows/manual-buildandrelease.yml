@@ -61,7 +61,7 @@ jobs:
           repository: "STARTcloud/core_provisioner"
           latest: true
           #fileName: "core.zip"
-          out-file-path: "core1"
+          #out-file-path: "core1"
           extract: true
           zipBall: true
 
