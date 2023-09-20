@@ -46,6 +46,7 @@ jobs:
 
       -
         name: Zipping Output
+        id: zip_artifact
         uses: vimtor/action-zip@v1
         if: ${{ steps.release.outputs.release_created }}
         with:
@@ -54,6 +55,7 @@ jobs:
 
       - 
         name: Create release
+        id: create_release
         uses: softprops/action-gh-release@v1
         if: ${{ steps.release.outputs.release_created }}
         with:
