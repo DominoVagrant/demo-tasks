@@ -41,22 +41,9 @@ jobs:
           echo "Version: ${{ inputs.version }}"
           echo "App Name: ${{ env.app_name }}"
 
-#      -
-#        name: Release-Please
-#        id: release
-#        uses: google-github-actions/release-please-action@v3
-#        with:
-#          command: manifest
-#          default-branch: main
-#          package-name: demo-tasks
-#          bump-minor-pre-major: true
-#          bump-patch-for-minor-pre-major: true
-#          version-file: "demo-tasks/core/version.rb"
-
       - 
         name: Checking out code
         uses: actions/checkout@v2
-#        if: ${{ steps.release.outputs.release_created }}
 
       -
         name: Zipping Output
