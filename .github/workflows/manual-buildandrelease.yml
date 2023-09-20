@@ -61,9 +61,8 @@ jobs:
           repository: "STARTcloud/core_provisioner"
           latest: true
           fileName: "core_provisioner.zip"
-          out-file-path: "demo-tasks"
+          #out-file-path: "demo-tasks"
           extract: true
-          zipBall: false
 
       -
         name: Zipping Output
