@@ -45,16 +45,26 @@ jobs:
         name: Checking out code
         uses: actions/checkout@v2
 
-      - 
-        name: "Checking out Core Provisioner"
-        uses: actions/checkout@v4
+#      - 
+#        name: "Checking out Core Provisioner"
+#        uses: actions/checkout@v4
+#        with:
+#          repository: STARTcloud/core_provisioner
+#          path: ${{ env.app_name }}/core1
+#          sparse-checkout: |
+#            Vagrantfile
+#            core/
+#          sparse-checkout-cone-mode: false
+
+      - uses: robinraju/release-downloader@v1.8
         with:
-          repository: STARTcloud/core_provisioner
-          path: ${{ env.app_name }}/core1
-          sparse-checkout: |
-            Vagrantfile
-            core/
-          sparse-checkout-cone-mode: false
+          repository: "STARTcloud/core_provisioner"
+          latest: true
+          #fileName: "core.zip"
+          out-file-path: "core1"
+          extract: true
+          zipBall: true
+
       -
         name: Zipping Output
         uses: vimtor/action-zip@v1
