@@ -41,7 +41,7 @@ jobs:
 #          version-file: "demo-tasks/core/version.rb"
 #          path: demo-tasks
 
-
+      - uses: actions/checkout@v2
       - name: Build info
         run: |
           echo "Ref: ${{ github.ref_name }}"
