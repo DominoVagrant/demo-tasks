@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.22](https://github.com/DominoVagrant/demo-tasks/compare/demo-tasks/v0.1.21...demo-tasks/v0.1.22) (2023-09-20)
+
+
+### Bug Fixes
+
+* auto-buildandrelease ([01cb66e](https://github.com/DominoVagrant/demo-tasks/commit/01cb66e62c9a19119a4faffbb004443432d9ace7))
+* auto-buildandrelease ([606ff69](https://github.com/DominoVagrant/demo-tasks/commit/606ff6976c511cec0b12fc5440ea2f0a9c12cca9))
+* auto-buildandrelease ([387ae13](https://github.com/DominoVagrant/demo-tasks/commit/387ae1399921726eacf7ac23def1f78f4c57d309))
+* auto-buildandrelease ([4a82874](https://github.com/DominoVagrant/demo-tasks/commit/4a82874c7056b0cc39a92d25379695fdd25c1b72))
+* auto-buildandrelease ([e9ea2e2](https://github.com/DominoVagrant/demo-tasks/commit/e9ea2e20670ae0610d761fce648754bb1eaeb7d0))
+* githubactions ([fc470f5](https://github.com/DominoVagrant/demo-tasks/commit/fc470f5cea8d0e968f4c667abe47b84720050e2c))
+
 ## [0.1.20](https://github.com/DominoVagrant/demo-tasks/compare/demo-tasks/v0.1.19...demo-tasks/v0.1.20) (2023-07-05)
 
 
