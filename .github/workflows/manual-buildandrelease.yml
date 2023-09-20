@@ -72,7 +72,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: STARTcloud/startcloud_roles
-          path: ${{ env.app_name }}/provisioners/ansible/roles
+          path: ${{ env.app_name }}/provisioners/ansible/startcloud_roles
           clean: false
 
       - 
@@ -80,8 +80,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: STARTcloud/hcl_roles
-          path: ${{ env.app_name }}/provisioners/ansible/roles
+          path: ${{ env.app_name }}/provisioners/ansible/hcl_roles
           clean: false
+
+      - 
+        name: "Consolidating Roles"
+        run: |
+          mv ${{ env.app_name }}/provisioners/ansible/hcl_roles ${{ env.app_name }}/provisioners/ansible/roles
+          mv ${{ env.app_name }}/provisioners/ansible/startcloud_roles ${{ env.app_name }}/provisioners/ansible/roles
 
       -
         name: "Removing Roles Directory"
