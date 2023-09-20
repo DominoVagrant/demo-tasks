@@ -86,8 +86,11 @@ jobs:
       - 
         name: "Consolidating Roles"
         run: |
-          mv ${{ env.app_name }}/provisioners/ansible/hcl_roles ${{ env.app_name }}/provisioners/ansible/roles
-          mv ${{ env.app_name }}/provisioners/ansible/startcloud_roles ${{ env.app_name }}/provisioners/ansible/roles
+          mkdir ${{ env.app_name }}/provisioners/ansible/roles
+          mv ${{ env.app_name }}/provisioners/ansible/hcl_roles/* ${{ env.app_name }}/provisioners/ansible/roles
+          mv ${{ env.app_name }}/provisioners/ansible/startcloud_roles/* ${{ env.app_name }}/provisioners/ansible/roles
+          rm -rf ${{ env.app_name }}/provisioners/ansible/hcl_roles
+          rm -rf ${{ env.app_name }}/provisioners/ansible/startcloud_roles
 
       -
         name: "Removing Roles Directory"
