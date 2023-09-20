@@ -7,6 +7,7 @@ on:
         description: 'An Environment'
         required: true
         type: choice
+        default: production
         options:
           - development
           - production
