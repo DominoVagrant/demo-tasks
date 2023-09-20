@@ -51,18 +51,18 @@ jobs:
 
       - uses: vimtor/action-zip@v1
         with:
-          files: demo-tasks
-          dest: demo-tasks.zip 
+          files: ${{ env.app_name }}/
+          dest: ${{ env.app_name }}.zip 
 
       - 
         name: Create release
         uses: softprops/action-gh-release@v1
         with:
-          name: "demo-tasks: v${{ inputs.version }}"
+          name: "${{ env.app_name }}: v${{ inputs.version }}"
           tag_name: v${{ inputs.version }}${{ env.suffix }}
           target_commitish: ${{ github.sha }}
           body: |
-            This is a ${{ inputs.env }} release of demo-tasks.
+            This is a ${{ inputs.env }} release of ${{ env.app_name }}.
           draft: true
           prerelease: ${{ inputs.env == 'development' }}
           files: |
